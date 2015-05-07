@@ -28,7 +28,7 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
 # Device uses ultra-high-density artwork where available
-PRODUCT_AAPT_CONFIG := hdpi xhdpi xxhdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Dot View Case
@@ -64,6 +64,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.compass.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -84,6 +85,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
+    libqcomvoiceprocessing \
     tinymix
 
 PRODUCT_PACKAGES += \
@@ -203,21 +205,21 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     power.msm8974
 
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8974
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
-
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
 
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 # Variant linking script
-PRODUCT_PACKAGES += \
-    makelinks.sh
+PRODUCT_COPY_FILES += \
+    device/htc/m8/releasetools/makelinks.sh:install/bin/makelinks.sh
 
 # Wifi firmware
 PRODUCT_PACKAGES += \
@@ -230,7 +232,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
@@ -239,4 +240,5 @@ PRODUCT_PACKAGES += \
     hostapd_default.conf \
     dhcpcd.conf \
     libwpa_client \
-    wpa_supplicant
+    wpa_supplicant \
+    wpa_supplicant.conf

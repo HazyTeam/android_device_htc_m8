@@ -5,6 +5,7 @@ bin/ATFWD-daemon
 bin/cir_fw_update
 bin/hcheck
 bin/hci_qcomm_init
+bin/hvdcp
 bin/irsc_util
 bin/mm-qcamera-app
 bin/mm-qcamera-daemon
@@ -245,11 +246,16 @@ lib/libtuning_awb_ov2722_subcam.so
 lib/libtuning_awb_ov4688.so
 lib/libtuning_awb_s5k5e.so
 lib/libtuning_awb_vd6869.so
-vendor/firmware/keymaster.b00
-vendor/firmware/keymaster.b01
-vendor/firmware/keymaster.b02
-vendor/firmware/keymaster.b03
-vendor/firmware/keymaster.mdt
+vendor/firmware/cmnlib.b00
+vendor/firmware/cmnlib.b01
+vendor/firmware/cmnlib.b02
+vendor/firmware/cmnlib.b03
+vendor/firmware/cmnlib.mdt
+vendor/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster/keymaster.b01
+vendor/firmware/keymaster/keymaster.b02
+vendor/firmware/keymaster/keymaster.b03
+vendor/firmware/keymaster/keymaster.mdt
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
@@ -358,6 +364,7 @@ vendor/lib/libscve.so
 vendor/lib/libscve_stub.so
 vendor/lib/libssd.so
 vendor/lib/libthermalclient.so
+vendor/lib/libthermalioctl.so
 -lib/libtime_genoff.so:vendor/lib/libtime_genoff.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
