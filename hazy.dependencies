@@ -1,14 +1,17 @@
 [
   {
-    "repository": "android_kernel_htc_msm8974",
-    "target_path": "kernel/htc/msm8974"
+    "repository": "CyanogenMod/android_kernel_htc_msm8974",
+    "target_path": "kernel/htc/msm8974",
+    "branch": "cm-12.1"
   },
   {
-    "repository": "android_device_qcom_common",
-    "target_path": "device/qcom/common"
+    "repository": "HazyTeam/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "branch": "hazypop"
   },
   {
-    "repository": "android_hardware_qcom_fm",
-    "target_path": "hardware/qcom/fm"
+    "repository": "CyanogenMod/android_hardware_qcom_fm",
+    "target_path": "hardware/qcom/fm",
+    "branch": "cm-12.1"
   }
 ]
